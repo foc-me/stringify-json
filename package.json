@@ -1,0 +1,20 @@
+{
+  "name": "@focme/stringify-json",
+  "version": "1.0.0",
+  "description": "a json write file formatter",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts", "readme.md", "package.json"],
+  "keywords": [
+    "node",
+    "json formatter",
+    "write",
+    "file"
+  ],
+  "author": "focme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foc-me/stringify-json"
+  },
+  "license": "ISC"
+}
