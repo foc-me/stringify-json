@@ -1,3 +1,5 @@
+"use strict"
+
 const defaultConfig = {
     base: "",
     key: "",
@@ -72,4 +74,4 @@ function stringify(construct, config) {
     return result.join(lineBreak)
 }
 
-module.exports = stringify
+export default stringify

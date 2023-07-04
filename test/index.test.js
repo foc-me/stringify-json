@@ -1,6 +1,6 @@
-const fs = require("node:fs")
-const path = require("node:path")
-const stringify = require("../index")
+import fs from "node:fs"
+import path from "node:path"
+import stringify from "../index"
 
 const testPath = path.resolve(process.cwd(), "./test")
 const filePath = path.join(testPath, "/formatted.json")
