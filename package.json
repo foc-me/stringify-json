@@ -18,7 +18,8 @@
   },
   "license": "ISC",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "node ./test/index.test.js"
   },
   "devDependencies": {
     "rollup": "^3.26.0",

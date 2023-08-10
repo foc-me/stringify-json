@@ -14,13 +14,28 @@ const attrs = [
     "repository",
     "license"
 ]
+
 function pickUp(packageInfo) {
     const results = attrs.map(attr => {
-        if (typeof attr === "string") return [attr, packageInfo[attr]]
+        if (typeof attr === "string") {
+            return [attr, packageInfo[attr]]
+        }
         return attr
     })
     return Object.fromEntries(results)
 }
+
+const targets = [
+    { src: ["./index.d.ts", "./readme.md"], dest: "./dist" },
+    {
+        src: "./package.json",
+        dest: "./dist",
+        transform: (content) => {
+            const json = pickUp(JSON.parse(content))
+            return stringify(json)
+        }
+    }
+]
 
 export default {
     input: "./src/index.js",
@@ -28,17 +43,7 @@ export default {
         { file: "./dist/index.js", format: "cjs" },
         { file: "./dist/index.esm.js", format: "es" }
     ],
-    plugins: [copy({
-        targets: [
-            { src: ["./index.d.ts", "./readme.md"], dest: "./dist" },
-            {
-                src: "./package.json",
-                dest: "./dist",
-                transform: (content) => {
-                    const json = pickUp(JSON.parse(content))
-                    return stringify(json)
-                }
-            }
-        ]
-    })]
+    plugins: [
+        copy({ targets })
+    ]
 }
