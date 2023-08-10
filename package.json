@@ -1,6 +1,6 @@
 {
   "name": "@focme/stringify-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a json write file formatter",
   "private": true,
   "type": "module",
@@ -8,8 +8,7 @@
   "keywords": [
     "node",
     "json formatter",
-    "write",
-    "file"
+    "write file"
   ],
   "author": "focme",
   "repository": {
@@ -18,7 +17,8 @@
   },
   "license": "ISC",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "node ./test/index.test.js"
   },
   "devDependencies": {
     "rollup": "^3.26.0",

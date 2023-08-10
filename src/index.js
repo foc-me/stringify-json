@@ -60,14 +60,13 @@ function stringify(construct, config) {
                     endsWith: last ? "" : ","
                 }))
             } else {
-                result.push(join(nextBase, quote(name), ":", keySpace, quote(value, quote), last ? "" : ","))
+                result.push(join(nextBase, quote(name), ":", keySpace, quote(value), last ? "" : ","))
             }
 
         }
 
         result.push(join(base, "}", endsWith))
-    }
-    else {
+    } else {
         result.push(join(base, quote(construct), endsWith))
     }
 

@@ -1,6 +1,6 @@
 import fs from "node:fs"
 import path from "node:path"
-import stringify from "../index"
+import stringify from "../src/index.js"
 
 const testPath = path.resolve(process.cwd(), "./test")
 const filePath = path.join(testPath, "/formatted.json")
