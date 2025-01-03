@@ -1,14 +1,31 @@
+import { createRequire } from "node:module"
 import copy from "rollup-plugin-copy"
 import stringify from "./src/index.js"
+
+const require = createRequire(import.meta.url)
+const pkg = require("./package.json")
+
+const banner = `/**
+ * ${pkg.name} v${pkg.version}
+ * @license MIT
+ * Copyright (c) 2025 - present Fat Otaku Team
+ **/`
 
 const attrs = [
     "name",
     "version",
     "description",
     "keywords",
-    ["main", "index.js"],
-    ["module", "index.esm.js"],
-    ["types", "index.d.ts"],
+    ["main", "./index.js"],
+    ["module", "./index.esm.js"],
+    ["types", "./index.d.ts"],
+    ["exports", {
+        ".": {
+            "types": "./index.d.ts",
+            "import": "./index.esm.js",
+            "require": "./index.js"
+        }
+    }],
     ["files", ["index.js", "index.esm.js", "index.d.ts", "package.json", "readme.md"]],
     "author",
     "repository",
@@ -40,8 +57,8 @@ const targets = [
 export default {
     input: "./src/index.js",
     output: [
-        { file: "./dist/index.js", format: "cjs" },
-        { file: "./dist/index.esm.js", format: "es" }
+        { file: "./dist/index.js", format: "cjs", banner },
+        { file: "./dist/index.esm.js", format: "esm", banner }
     ],
     plugins: [
         copy({ targets })
