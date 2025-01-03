@@ -1,6 +1,6 @@
 {
   "name": "@focme/stringify-json",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "a json write file formatter",
   "private": true,
   "type": "module",
