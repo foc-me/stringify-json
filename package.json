@@ -4,7 +4,6 @@
   "description": "a json write file formatter",
   "private": true,
   "type": "module",
-  "main": "./src/index.js",
   "keywords": [
     "node",
     "json formatter",
@@ -13,9 +12,9 @@
   "author": "focme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/foc-me/stringify-json"
+    "url": "git+https://github.com/foc-me/stringify-json"
   },
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "rollup -c",
     "test": "node ./test/index.test.js"
